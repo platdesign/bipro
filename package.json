@@ -3,14 +3,16 @@
   "description": "Binary Protocol composer/parser",
   "author": "Christian Blaschke <mail@platdesign.de>",
   "version": "0.0.0",
-  "main":"./lib/bipro.js",
-  "dependencies": {},
+  "main": "./lib/bipro.js",
+  "dependencies": {
+    "joi": "^10.6.0"
+  },
   "repository": "git@github.com:platdesign/bipro.git",
   "devDependencies": {
     "code": "^4.1.0",
     "mocha": "^3.4.2"
   },
-  "scripts":{
+  "scripts": {
     "test": "mocha",
     "test:w": "mocha -w"
   }

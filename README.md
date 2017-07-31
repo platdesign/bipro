@@ -103,8 +103,10 @@ Takes a buffer and returns parsed data or `false` if no messageType matches.
 - **ulongbe**
 - **array**
 	
-	- **itemType** (`String`)	
+	- **items** (`String`|`Object`)	
 	Set custom item type. (e.g. string, char, ulongbe) Default is `uint8`
+		- `String` Name of type
+		- `Object` Schema options ({type: 'string', size:3})
 	
 	- **sizeType** (`String`)	
 	Set custom size type. Default is `uint8`

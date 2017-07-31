@@ -36,6 +36,13 @@ describe('Examples', function() {
 				{ type: 'productId', required: true },
 				{ type: 'string', key: 'name2' },
 				{ type: 'char', key: 'name' },
+				{ key: 'qwe', type: 'array', items: 'string' },
+				{ key: 'asd', type: 'array', items: { type: 'string' } },
+				{ key: 'asdqwe', type: 'array', items: { type: 'uint8' } },
+				{ key: 'strarr', type: 'array', items: { type: 'string', size:3 } },
+				{ key: 'strlen', type: 'uint8' },
+				{ key: 'strlenstr', type: 'string', size: 'strlen' }
+
 			]
 		});
 
@@ -46,11 +53,18 @@ describe('Examples', function() {
 			productId: 345,
 			values: [1,2,3,4],
 			name: 'b',
-			name2: 'Christian'
+			name2: 'Christian',
+			qwe: ['Hallo', 'dina'],
+			asd: ['qwe', 'asd'],
+			asdqwe: [1,2,3,4],
+			strarr: ['qwe', 'asdqwe'],
+
+			strlen: 4,
+			strlenstr: 'abcdef'
 		});
 
 
-		console.log(buf)
+		console.log(buf.length)
 
 		let res = pro.match(buf);
 
