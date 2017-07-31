@@ -1,0 +1,8 @@
+{
+  "name": "bipo",
+  "description": "Binary Protocol composer/parser",
+  "author": "Christian Blaschke <mail@platdesign.de>",
+  "version": "0.0.0",
+  "dependencies": {}
+}
+
