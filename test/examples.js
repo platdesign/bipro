@@ -10,6 +10,100 @@ const Bipro = require('../lib/bipro');
 
 describe('Examples', function() {
 
+
+	it('should', () => {
+
+		let pro = new Bipro.Protocol();
+
+		pro.defineMessage('test', {
+			schema:[
+				{ key: 'config', type: 'uint8', bits: {
+					a: 0,
+					b: 1,
+					c: 2,
+					d: 7,
+					e: 4,
+				}}
+			]
+		});
+
+
+		let payload = {
+			config: {
+				a: true,
+				b: false,
+				d: true
+			}
+		};
+
+		let buf = pro.compose('test', payload);
+
+
+		expect(buf).to.equal(Buffer.from([0b10000001]));
+
+		console.log(buf)
+
+		let result = pro.match(buf);
+
+
+		expect(result.data).to.equal({
+			config: {
+				a: true,
+				b: false,
+				c: false,
+				d: true,
+				e: false
+			}
+		});
+
+	})
+
+
+	it('should', () => {
+
+		let pro = new Bipro.Protocol();
+
+		pro.defineMessage('test', {
+			schema:[
+				{ key: 'config', type: 'uint16be', bits: {
+					a: 0,
+					b: 1,
+					c: 2,
+					d: 10,
+					e: 4,
+				}}
+			]
+		});
+
+
+		let payload = {
+			config: {
+				a: true,
+				b: false,
+				d: true
+			}
+		};
+
+		let buf = pro.compose('test', payload);
+
+		expect(buf).to.equal(Buffer.from([0b00000100, 0b00000001]));
+
+
+		let result = pro.match(buf);
+
+
+		expect(result.data).to.equal({
+			config: {
+				a: true,
+				b: false,
+				c: false,
+				d: true,
+				e: false
+			}
+		});
+
+	})
+
 	// it('should', () => {
 
 	// 	let pro = new Bipro.Protocol();
