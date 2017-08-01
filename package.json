@@ -2,7 +2,7 @@
   "name": "bipro",
   "description": "Binary Protocol composer/parser",
   "author": "Christian Blaschke <mail@platdesign.de>",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "./lib/bipro.js",
   "dependencies": {
     "joi": "^10.6.0"
