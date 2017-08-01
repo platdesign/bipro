@@ -42,7 +42,6 @@ describe('Examples', function() {
 				{ key: 'strarr', type: 'array', items: { type: 'string', size:3 } },
 				{ key: 'strlen', type: 'uint8' },
 				{ key: 'strlenstr', type: 'string', size: 'strlen' }
-
 			]
 		});
 

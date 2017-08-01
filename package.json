@@ -10,10 +10,12 @@
   "repository": "git@github.com:platdesign/bipro.git",
   "devDependencies": {
     "code": "^4.1.0",
-    "mocha": "^3.4.2"
+    "mocha": "^3.5.0",
+    "npm-release": "^1.0.0"
   },
   "scripts": {
     "test": "mocha",
-    "test:w": "mocha -w"
+    "test:w": "mocha -w",
+    "release:patch": "git commit -a -m \"build\" && npm-release patch"
   }
 }
