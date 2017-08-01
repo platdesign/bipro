@@ -16,6 +16,6 @@
   "scripts": {
     "test": "mocha",
     "test:w": "mocha -w",
-    "release:patch": "git commit -a -m \"build\" && npm-release patch"
+    "release:patch": "npm-release patch"
   }
 }
