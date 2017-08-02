@@ -5,6 +5,7 @@
   "version": "0.0.7",
   "main": "./lib/bipro.js",
   "dependencies": {
+    "is": "^3.2.1",
     "joi": "^10.6.0"
   },
   "repository": "git@github.com:platdesign/bipro.git",
