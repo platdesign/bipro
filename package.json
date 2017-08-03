@@ -18,7 +18,7 @@
   "scripts": {
     "test": "nyc mocha",
     "test:w": "mocha -w",
-    "release:patch": "npm run coverage && git commit -a -m \"Build for release\" && npm-release patch",
+    "release:patch": "npm run coverage && git commit -a -m \"Prepare for build\" && npm-release patch",
     "coverage": "mkdir -p .nyc_output && npm run test && nyc report --reporter=html"
   }
 }
