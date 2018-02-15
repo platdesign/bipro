@@ -131,6 +131,48 @@ describe('Types', function() {
 
 
 
+		test('array of arrays', [
+			{ key:'data', type: 'array', size: 4, items: { type: 'array', items: 'uint8', size: 3 } }
+		], {
+			data: [
+				[1,2,9],
+				[3,4,9],
+				[5,6,9],
+				[7,8,9]
+			]
+		}, [1,2,9,3,4,9,5,6,9,7,8,9], {
+			data: [
+				[1,2,9],
+				[3,4,9],
+				[5,6,9],
+				[7,8,9]
+			]
+		});
+
+
+		test('array of arrays with ref size', [
+			{ key: 'itemsCount', type: 'uint8' },
+			{ key:'data', type: 'array', size: 'itemsCount', items: { type: 'array', items: 'uint8', size: 3 } }
+		], {
+			itemsCount: 4,
+			data: [
+				[1,2,9],
+				[3,4,9],
+				[5,6,9],
+				[7,8,9]
+			]
+		}, [4, 1,2,9,3,4,9,5,6,9,7,8,9], {
+			itemsCount: 4,
+			data: [
+				[1,2,9],
+				[3,4,9],
+				[5,6,9],
+				[7,8,9]
+			]
+		})
+
+
+
 	});
 
 
